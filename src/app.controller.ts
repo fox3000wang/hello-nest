@@ -5,10 +5,12 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 
+// 默认的根路由
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  // get方法返回
   @Get()
   getHello(): string {
     return this.appService.getHello();

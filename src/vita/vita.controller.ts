@@ -8,7 +8,6 @@ export class VitaController {
   constructor(private readonly vitaService: VitaService) {}
 
   @Get()
-  // @ApiOperation({ title: 'test' })
   getVita() {
     return this.vitaService.getVita();
   }

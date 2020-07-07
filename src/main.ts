@@ -1,3 +1,6 @@
+/*
+  项目的入口
+*/
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
