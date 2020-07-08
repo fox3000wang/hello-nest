@@ -1,5 +1,11 @@
 # 自定义 logger 中间件
 
+## 中间件的概念
+
+https://docs.nestjs.com/middleware
+
+![](https://docs.nestjs.com/assets/Middlewares_1.png)
+
 ## 自定义一个在每次请求的时候打 log 的中间件
 
 ```js
