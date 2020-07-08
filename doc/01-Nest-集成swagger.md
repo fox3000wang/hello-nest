@@ -1,7 +1,7 @@
 # 集成 swagger
 
 ```shell
-npm install @nestjs/swagger
+npm install --save @nestjs/swagger swagger-ui-express
 ```
 
 main.js 项目入口

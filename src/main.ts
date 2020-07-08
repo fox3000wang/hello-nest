@@ -6,7 +6,15 @@ import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  // https://docs.nestjs.com/techniques/logger
+  const app = await NestFactory.create(AppModule, {
+    //logger: false,
+    //logger: ['error', 'warn'],
+    //logger: console,
+  });
+
+  // 全局使用中间件
+  // app.use(logger)
 
   // for Swagger https://github.com/nestjs/swagger
   const options = new DocumentBuilder()
