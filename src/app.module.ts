@@ -4,10 +4,11 @@ import { UserModule } from './user/user.module';
 import { Module, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { ExceptionModule } from './modules/exception/exception.module';
+import { RoleGuardModule } from './modules/role-guard/role-guard.module';
 
 // 根Module
 @Module({
-  imports: [UserModule, ExceptionModule],
+  imports: [UserModule, ExceptionModule, RoleGuardModule],
   controllers: [AppController],
   providers: [AppService],
 })
