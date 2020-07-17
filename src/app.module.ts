@@ -1,14 +1,20 @@
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './user/user.module';
+import { UserModule } from './modules/user/user.module';
 import { Module, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { ExceptionModule } from './modules/exception/exception.module';
 import { RoleGuardModule } from './modules/role-guard/role-guard.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 // 根Module
 @Module({
-  imports: [UserModule, ExceptionModule, RoleGuardModule],
+  imports: [
+    UserModule,
+    ExceptionModule,
+    RoleGuardModule,
+    MongooseModule.forRoot('mongodb://123.207.220.13/mall'),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
