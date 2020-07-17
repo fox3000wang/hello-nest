@@ -1,6 +1,8 @@
 import { Controller, Post, Get } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 
-@Controller('user')
+@ApiTags('user')
+@Controller('/user')
 export class UserController {
   @Get()
   getUser() {

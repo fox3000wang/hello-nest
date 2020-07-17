@@ -26,10 +26,10 @@ async function bootstrap() {
 
   // for Swagger https://github.com/nestjs/swagger
   const options = new DocumentBuilder()
-    .setTitle('Vita example')
-    .setDescription('The vita API description')
+    .setTitle('狸叔严选')
+    .setDescription('The API description')
     .setVersion('1.0')
-    .addTag('vita')
+    .addTag('API')
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
