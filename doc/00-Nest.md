@@ -24,12 +24,16 @@ vscode 里还会有对应的可视化的插件
 
 ### 装饰器
 
-### Controllers 控制器
-
 ### 路由
 
-### Providers service 服务
+### Controllers 控制器
+
+![](https://docs.nestjs.com/assets/Controllers_1.png)
+
+### Providers 提供者 service 服务
+
+![](https://docs.nestjs.com/assets/Components_1.png)
 
 ### Modules 模块
 
-### Middleware 中间件
+![](https://docs.nestjs.com/assets/Modules_1.png)
