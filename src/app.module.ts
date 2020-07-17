@@ -1,23 +1,25 @@
+import { Module, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './modules/user/user.module';
-import { Module, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { ExceptionModule } from './modules/exception/exception.module';
 import { RoleGuardModule } from './modules/role-guard/role-guard.module';
 import { CatsModule } from './modules/cat/cats.module';
-
-import { MongooseModule } from '@nestjs/mongoose';
+import { UserModule } from './modules/user/user.module';
+import { HealthModule } from './modules/health/health.module';
 
 // 根Module
 @Module({
   imports: [
+    // 安装过程完成后，我们可以将其 MongooseModule 导入到根目录 AppModule 中。
+    MongooseModule.forRoot('mongodb://123.207.220.13:27017/mall'),
     UserModule,
     ExceptionModule,
     RoleGuardModule,
     CatsModule,
-    // 安装过程完成后，我们可以将其 MongooseModule 导入到根目录 AppModule 中。
-    MongooseModule.forRoot('mongodb://123.207.220.13:27017/mall'),
+    HealthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
